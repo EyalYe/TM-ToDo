@@ -1,0 +1,23 @@
+# ═══════════════════════════════════════════════════════════════════════════
+#  apps.yaml — your device's configuration. This is the ONLY file you edit.
+#
+#  This example ships TWO task apps that share one library (components/todo_common):
+#    - app_cloud — tasks straight from Todoist (HTTPS)
+#    - app_local — tasks from a LAN task server
+#  They're alternative task sources, so pick ONE (leave the other commented). Both
+#  use the same tasks.h, so the shared logic lives in exactly one place.
+#
+#  core: the sealed OS — pinned, never edited. A build hook compiles this file into
+#  main/idf_component.yml (generated, git-ignored). You never touch main/ or core.
+# ═══════════════════════════════════════════════════════════════════════════
+core:
+  git: https://github.com/EyalYe/TaskMaster.git
+  path: components/taskmaster_core
+  version: v1.2.0
+
+apps:
+  # Pick ONE task source (both share components/todo_common):
+  - name: app_cloud            # Todoist, direct over HTTPS
+    path: apps/app_cloud
+  # - name: app_local          # a LAN task server
+  #   path: apps/app_local
