@@ -13,7 +13,7 @@
 core:
   git: https://github.com/EyalYe/TaskMaster.git
   path: components/taskmaster_core
-  version: v1.2.0
+  version: v1.2.1
 
 apps:
   # Pick ONE task source (both share components/todo_common):
